@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuj Bhadola - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for smooth scrolling and animations */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Keyframe animations for hero section */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-down {
+            animation: fadeInDown 0.6s ease-out forwards;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md rounded-b-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-indigo-600">
+                Anuj Bhadola
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 transition duration-300 flex items-center">
+                    <i data-lucide="home" class="mr-2" size="18"></i> Home
+                </a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300 flex items-center">
+                    <i data-lucide="user" class="mr-2" size="18"></i> About
+                </a>
+                <a href="#skills" class="text-gray-600 hover:text-indigo-600 transition duration-300 flex items-center">
+                    <i data-lucide="lightbulb" class="mr-2" size="18"></i> Skills
+                </a>
+                <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition duration-300 flex items-center">
+                    <i data-lucide="briefcase" class="mr-2" size="18"></i> Experience
+                </a>
+                <a href="#certifications" class="text-gray-600 hover:text-indigo-600 transition duration-300 flex items-center">
+                    <i data-lucide="award" class="mr-2" size="18"></i> Certifications
+                </a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300 flex items-center">
+                    <i data-lucide="folder-open" class="mr-2" size="18"></i> Projects
+                </a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300 flex items-center">
+                    <i data-lucide="mail" class="mr-2" size="18"></i> Contact
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <i data-lucide="menu" id="menu-icon" size="24"></i>
+                    <i data-lucide="x" id="close-icon" size="24" class="hidden"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white py-4 shadow-inner rounded-b-lg hidden">
+            <a href="#home" class="block w-full text-left px-6 py-2 text-gray-700 hover:bg-gray-100 flex items-center">
+                <i data-lucide="home" class="mr-2" size="18"></i> Home
+            </a>
+            <a href="#about" class="block w-full text-left px-6 py-2 text-gray-700 hover:bg-gray-100 flex items-center">
+                <i data-lucide="user" class="mr-2" size="18"></i> About
+            </a>
+            <a href="#skills" class="block w-full text-left px-6 py-2 text-gray-700 hover:bg-gray-100 flex items-center">
+                <i data-lucide="lightbulb" class="mr-2" size="18"></i> Skills
+            </a>
+            <a href="#experience" class="block w-full text-left px-6 py-2 text-gray-700 hover:bg-gray-100 flex items-center">
+                <i data-lucide="briefcase" class="mr-2" size="18"></i> Experience
+            </a>
+            <a href="#certifications" class="block w-full text-left px-6 py-2 text-gray-700 hover:bg-gray-100 flex items-center">
+                <i data-lucide="award" class="mr-2" size="18"></i> Certifications
+            </a>
+            <a href="#projects" class="block w-full text-left px-6 py-2 text-gray-700 hover:bg-gray-100 flex items-center">
+                <i data-lucide="folder-open" class="mr-2" size="18"></i> Projects
+            </a>
+            <a href="#contact" class="block w-full text-left px-6 py-2 text-gray-700 hover:bg-gray-100 flex items-center">
+                <i data-lucide="mail" class="mr-2" size="18"></i> Contact
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-indigo-500 to-purple-600 text-white pt-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in-up">
+                Hi, I'm <span class="text-yellow-300">Anuj Bhadola</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 animate-fade-in-up delay-200">
+                An <span class="font-semibold">Aspiring Data Analyst</span> proficient in SQL, Power BI, and Python.
+            </p>
+            <a href="#projects" class="bg-white text-indigo-600 hover:bg-indigo-100 px-8 py-3 rounded-full text-lg font-semibold shadow-lg transition duration-300 transform hover:scale-105 animate-fade-in-up delay-400">
+                View My Work
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white rounded-lg shadow-lg mx-4 md:mx-8 lg:mx-16 my-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">About Me</h2>
+            <div class="text-lg text-gray-700 leading-relaxed">
+                <p class="mb-4">
+                    Hello, my name is <span class="font-semibold">Anuj Bhadola</span>. I am an aspiring data analyst with a strong foundation in computer science, proficient in SQL, Power BI, and Python. I have hands-on experience in data analysis and am seeking to apply my analytical skills to a full-time role.
+                </p>
+                <p class="mb-4">
+                    I recently completed my Bachelor of Computer Applications (BCA) from Guru Gobind Singh Indraprastha University (GGSIPU).
+                </p>
+                <p>
+                    I am detail-oriented, a quick learner, and genuinely enjoy turning raw data into meaningful insights. I'm excited about the opportunity to learn more and contribute to a team.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100 rounded-lg shadow-lg mx-4 md:mx-8 lg:mx-16 my-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1: Data Analysis Expertise -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Data Analysis & BI Tools</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Power BI, Tableau</li>
+                        <li>SQL, PostgreSQL, MySQL</li>
+                        <li>Microsoft Excel, Jupyter</li>
+                        <li>Data Cleaning & Preprocessing</li>
+                        <li>Data Visualization & Reporting</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 2: Programming & Machine Learning -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Programming & ML</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                        <li>Predictive Modeling</li>
+                        <li>Customer Segmentation</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+                <!-- Skill Card 3: Soft Skills -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Soft Skills</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Problem-Solving</li>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Attention to Detail</li>
+                        <li>Analytical Thinking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Experience Section -->
+    <section id="experience" class="py-20 bg-white rounded-lg shadow-lg mx-4 md:mx-8 lg:mx-16 my-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Internship Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-indigo-600">Data Analyst Intern | Sarvagya Institute</h3>
+                    <p class="text-md text-gray-700 mt-1">
+                        <span class="font-light">July 2024 – September 2024</span>
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mt-4 space-y-2">
+                        <li>Utilized SQL to extract and manipulate large datasets, improving data retrieval efficiency.</li>
+                        <li>Created interactive dashboards in PowerBI to visualize KPIs for stakeholders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gray-100 rounded-lg shadow-lg mx-4 md:mx-8 lg:mx-16 my-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Certification Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Learning Link Foundation Data Analytics Course Certification</h3>
+                    <p class="text-sm text-gray-700 mb-4 flex-grow">
+                        A foundational course that provides a strong understanding of core data analytics concepts and methodologies.
+                    </p>
+                    <a
+                        href="#"
+                        class="inline-block bg-indigo-600 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300 w-fit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Python Programming (NPTEL) - 91%</h3>
+                    <p class="text-sm text-gray-700 mb-4 flex-grow">
+                        A certification from NPTEL validating advanced Python programming skills with a distinguished score of 91%.
+                    </p>
+                    <a
+                        href="#"
+                        class="inline-block bg-indigo-600 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300 w-fit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Career Skills in Data Analytics (LinkedIn)</h3>
+                    <p class="text-sm text-gray-700 mb-4 flex-grow">
+                        A certification from LinkedIn validating skills in career-oriented data analytics practices.
+                    </p>
+                    <a
+                        href="https://www.linkedin.com/learning/certificates/2c08424678aff57dfc3b4ee405b1ba74d6f5db262c8de95759e84e6d4b41043b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bs2Snh72VRIGjr1F%2B0k5bvg%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block bg-indigo-600 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300 w-fit"
+                    >
+                        View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Career Essentials in Data Analytics (Microsoft & LinkedIn)</h3>
+                    <p class="text-sm text-gray-700 mb-4 flex-grow">
+                        A comprehensive program that covers foundational skills and best practices for a career in data analytics, from Microsoft and LinkedIn.
+                    </p>
+                    <a
+                        href="https://www.linkedin.com/learning/certificates/d71c0b44883746399e4b06b30d0b007c158de23586300892db5ed0c11e9d0125?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bs2Snh72VRIGjr1F%2B0k5bvg%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block bg-indigo-600 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300 w-fit"
+                    >
+                        View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Analyzing and Visualizing Data in Power BI (Great Learning)</h3>
+                    <p class="text-sm text-gray-700 mb-4 flex-grow">
+                        A certification focused on practical skills in data analysis and visualization using Power BI, provided by Great Learning.
+                    </p>
+                    <a
+                        href="http://verify.mygreatlearning.com/GKEQRNHL"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block bg-indigo-600 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300 w-fit"
+                    >
+                        View Certificate
+                    </a>
+                </div>
+                <!-- Certification Card 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col">
+                    <h3 class="text-xl font-semibold text-indigo-600 mb-2">Accenture Data Analytics and Job Simulation</h3>
+                    <p class="text-sm text-gray-700 mb-4 flex-grow">
+                        A virtual internship experience focused on applying data analytics to real-world business scenarios.
+                    </p>
+                    <a
+                        href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_LtvzGDDBFqgmyFeFC_1725743655973_completion_certificate.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block bg-indigo-600 text-white text-sm px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300 w-fit"
+                    >
+                        View Certificate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white rounded-lg shadow-lg mx-4 md:mx-8 lg:mx-16 my-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card: Customer Churn Analysis -->
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img
+                        src="https://placehold.co/600x400/818CF8/FFFFFF?text=Customer+Churn+Analysis"
+                        alt="Customer Churn Analysis Project"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Customer Churn Analysis</h3>
+                        <p class="text-gray-700 mb-4">
+                            Analyzed customer churn data to identify key factors leading to churn. This helps businesses proactively address churn risks and improve customer retention strategies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pandas</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Scikit-learn</span>
+                        </div>
+                        <a
+                            href="https://github.com/anuj4498/Data-Analysis/tree/main/Customer%20churn%20analysis"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Project Card: Diwali Sales Analysis -->
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img
+                        src="https://placehold.co/600x400/A78BFA/FFFFFF?text=Diwali+Sales+Analysis"
+                        alt="Diwali Sales Analysis Project"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Diwali Sales Analysis</h3>
+                        <p class="text-gray-700 mb-4">
+                            Analyzed Diwali sales data to understand consumer behavior and purchasing patterns during the festive season. Identified key insights for marketing strategy.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Matplotlib</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Seaborn</span>
+                        </div>
+                        <a
+                            href="https://github.com/anuj4498/Data-Analysis/tree/main/Diwali%20sales%20analysis"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                <!-- Project Card: E-commerce Dashboard -->
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img
+                        src="https://placehold.co/600x400/C4B5FD/FFFFFF?text=E-commerce+Dashboard"
+                        alt="E-commerce Dashboard Project"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-2">E-commerce Dashboard</h3>
+                        <p class="text-gray-700 mb-4">
+                            Created an interactive dashboard using Power BI to monitor key performance indicators (KPIs) of an e-commerce business, including sales, profit, and customer segments.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Power BI</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Visualization</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">KPIs</span>
+                        </div>
+                        <a
+                            href="https://github.com/anuj4498/Data-Analysis/tree/main/E%20commerce%20dashboard"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                 <!-- Project Card: Hotel Booking Dashboard -->
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img
+                        src="https://placehold.co/600x400/E0E7FF/FFFFFF?text=Hotel+Booking+Dashboard"
+                        alt="Hotel Booking Dashboard Project"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Hotel Booking Dashboard</h3>
+                        <p class="text-gray-700 mb-4">
+                            Analyzed hotel booking data to visualize trends, cancellation reasons, and customer preferences using Excel's dynamic charts and pivot tables.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Microsoft Excel</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pivot Tables</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Visualization</span>
+                        </div>
+                        <a
+                            href="https://github.com/anuj4498/Data-Analysis/tree/main/Hotel%20booking%20dashboard"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                 <!-- Project Card: Netflix Data Analysis -->
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <img
+                        src="https://placehold.co/600x400/BFBFBF/FFFFFF?text=Netflix+Data+Analysis"
+                        alt="Netflix Data Analysis Project"
+                        class="w-full h-48 object-cover"
+                    />
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Netflix Data Analysis</h3>
+                        <p class="text-gray-700 mb-4">
+                            Queried and analyzed a Netflix dataset using SQL to understand content trends, ratings, and genre popularity. Identified insights on show types, duration, and release distribution.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">SQL</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Querying</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                        </div>
+                        <a
+                            href="https://github.com/anuj4498/Data-Analysis/tree/main/Netflix%20data%20analysis"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300"
+                        >
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 rounded-lg shadow-lg mx-4 md:mx-8 lg:mx-16 my-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Get In Touch</h2>
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md text-center">
+                <p class="text-gray-700 mb-6">
+                    I'd love to connect! Feel free to reach out via email or connect with me on social media.
+                </p>
+                <div class="space-y-4 text-lg">
+                    <div class="flex items-center justify-center">
+                        <i data-lucide="mail" class="mr-3 text-indigo-600" size="24"></i>
+                        <a href="mailto:anujbhadola4@gmail.com" class="text-indigo-600 hover:underline font-semibold">anujbhadola4@gmail.com</a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i data-lucide="phone" class="mr-3 text-indigo-600" size="24"></i>
+                        <a href="tel:+919971445457" class="text-indigo-600 hover:underline font-semibold">+91 9971445457</a>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="https://linkedin.com/in/anuj-bhadola4" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 transition duration-300 transform hover:scale-110">
+                        <i data-lucide="linkedin" size="36"></i>
+                    </a>
+                    <a href="https://github.com/anuj4498" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 transition duration-300 transform hover:scale-110">
+                        <i data-lucide="github" size="36"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 transition duration-300 transform hover:scale-110">
+                        <i data-lucide="twitter" size="36"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; <span id="current-year"></span> Anuj Bhadola. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="https://linkedin.com/in/anuj-bhadola4" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="https://github.com/anuj4498" class="text-gray-400 hover:text-white transition duration-300">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
+            </div>
+        </div>
+    </footer
+>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Get current year for footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
